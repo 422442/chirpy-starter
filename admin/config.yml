@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: 422442/chirpy-starter
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Categories", name: "categories", widget: "list", required: false, hint: "Hierarchical categories (e.g. [Tech, Python])"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Pin", name: "pin", widget: "boolean", default: false, required: false}
+      - {label: "Math", name: "math", widget: "boolean", default: false, required: false}
+      - {label: "Mermaid", name: "mermaid", widget: "boolean", default: false, required: false}
